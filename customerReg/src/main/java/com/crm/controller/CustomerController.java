@@ -8,17 +8,16 @@ import com.crm.model.CustomerBean;
 
 @Controller
 public class CustomerController {
-	
+
 	@GetMapping("/index")
-	public String getIndex() {
+	public String getIndexPage() {
 		return "index";
 	}
-	
 	@GetMapping("/register")
-	public String getRegistration(Model model) {
+	public String getRegisterPage(Model model) {
+		System.out.println("inside - getReg");
 		CustomerBean customerBean = new CustomerBean();
 		model.addAttribute("custBean", customerBean);
 		return "register";
 	}
-	
 }
