@@ -1,6 +1,7 @@
 package com.jpa.runner;
 
-import java.util.Optional;
+import java.util.Iterator;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -18,25 +19,24 @@ public class MyRunner implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
-		/* Performing CRUD Operations*/
-		/****Save Records****/
-		//prodRepo.save(new Product(104,"Iphone 12", 45000.00,"blue"));
-		//prodRepo.save(new Product(105,"Iphone 12", 45000.00,"blue"));
+		/*** Insert Data Into Table **/
 		
-		/*** Read Operation***/
-		prodRepo.findAll().forEach(map -> System.out.println(map.getProdName()));
-		
-		Optional<Product> p = prodRepo.findById(101);
-		if(p.isPresent()) {
-			System.out.println(p.get().getProdName());
+		//prodRepo.save(new Product("Samsung", 45000.00,"Blue"));
+		//prodRepo.save(new Product("Iphone", 55000.00,"Red"));
+		//prodRepo.save(new Product("Mi", 65000.00,"Gray"));
+	    /*** Read Operation */
+		/*
+		List<Product> productList = prodRepo.findAll();
+		//productList.forEach(x-> System.out.println(x));
+		Iterator itr= productList.iterator();
+		while(itr.hasNext()) {
+			System.out.println(itr.next().toString());
 		}
-		else {
-			System.out.println("Product Not Available");
-		}
-		
-			
-		/** delete Operations**/
-
+		//prodRepo.findAll().forEach(product -> System.out.println(product));
+		*/
+		/*** Delete Operation */
+		prodRepo.deleteAll();
+		//prodRepo.deleteAllById(null);
 	}
 
 }

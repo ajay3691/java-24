@@ -9,41 +9,41 @@ public class Product {
 	
 	
 	@Id
-	private Integer id;
+	@GeneratedValue
+	private Integer prodId;
 	
 	private String prodName;
 	private double prodCost;
 	private String prodColor;
-	
-	/*generate setter and getter,constuctors and toString metho debugging*/
-	
 	public Product() {
 		super();
+		System.out.println("Test Case 1");
+	}
+	public Product(Integer prodId) {
+		super();
+		this.prodId = prodId;
+		System.out.println("Test Case 2");
 	}
 	
-	
-	public Product(Integer id) {
+	public Product(String prodName, double prodCost, String prodColor) {
 		super();
-		this.id = id;
-	}
-
-
-	
-	public Product(Integer id, String prodName, double prodCost, String prodColor) {
-		super();
-		this.id = id;
 		this.prodName = prodName;
 		this.prodCost = prodCost;
 		this.prodColor = prodColor;
 	}
-
-
-	public Integer getId() {
-		return id;
+	public Product(Integer prodId, String prodName, double prodCost, String prodColor) {
+		super();
+		this.prodId = prodId;
+		this.prodName = prodName;
+		this.prodCost = prodCost;
+		this.prodColor = prodColor;
+		System.out.println("Test Case 2");
 	}
-	
-	public void setId(Integer id) {
-		this.id = id;
+	public Integer getProdId() {
+		return prodId;
+	}
+	public void setProdId(Integer prodId) {
+		this.prodId = prodId;
 	}
 	public String getProdName() {
 		return prodName;
@@ -63,6 +63,14 @@ public class Product {
 	public void setProdColor(String prodColor) {
 		this.prodColor = prodColor;
 	}
+	@Override
+	public String toString() {
+		return "Product [prodId=" + prodId + ", prodName=" + prodName + ", prodCost=" + prodCost + ", prodColor="
+				+ prodColor + "]";
+	}
+	
+	/*generate setter and getter,constuctors and toString metho debugging*/
+	
 	
 	
 }
