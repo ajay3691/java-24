@@ -25,14 +25,14 @@ public class MyRunner implements CommandLineRunner {
 		//empRepo.findByEmpLoc("Bangalore").forEach(System.out::println);
 		
 		//List<Employee> empList=empRepo.findByEmpLoc("Bangalore");
-		empRepo.findByEmpLoc("Bangalore").forEach(emp->System.out.println(emp.getEmpFirstName()));
+		//empRepo.findByEmpLoc("Bangalore").forEach(emp->System.out.println(emp.getEmpFirstName()));
 		/*
 		Iterator itr = empList.iterator();
 		while(itr.hasNext()) {
 			System.out.println(itr.next().toString());
 		}
 		*/
-		
+		empRepo.getEmployees("Rahul", "Gandhi").forEach(emp-> System.out.println(emp.getEmpId()));
 	}
 
 }
