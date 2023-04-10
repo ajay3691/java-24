@@ -7,5 +7,5 @@ import com.product.model.Product;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Integer> {
-
+	public void findByName(String name);
 }
